@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Memory Game!</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Lets have some fun!" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="icon" type="image/ico" href="favicon.ico" />
+    <style>
+      @import url(http://fonts.googleapis.com/css?family=Indie+Flower:400,600);
+    </style>
+    <style>
+      @import url(http://fonts.googleapis.com/css?family=Lobster:400,600);
+    </style>
+  </head>
+
+  <body>
+    <div class="sheet-container">
+        <div class="sheet-head">
+          <h1>
+            Memory game for fun!
+          </h1>
+          <h3 style="margin-bottom: 2px;">
+            What?
+          </h3>
+          <div style="max-width: 600px; margin: auto;">
+            <p style="margin-top: 0;">
+              Memory, also known as Match Match, Match Up, Concentration
+              Pelmanism, Shinkei-suijaku, Pexeso or simply Pairs, is a card game
+              in which all of the cards are laid face down on a surface and two
+              cards are flipped face up over each turn.
+            </p>
+            <p>
+              The object of the game is to turn over pairs of matching cards.
+            </p>
+          </div>
+        </div>
+
+        <div class="progress-bar bar-left">
+          <div class="timer-container timer-left">
+            <!-- Timer -->
+            <span>Timer: </span><span id="game-timer">0</span>
+          </div>
+
+          <div class="status-trick">
+            <div class="status-trigger status-left">
+              Score <span id="game-score"></span>
+            </div>
+
+            <div class="status-content status-left">
+              Scoreboard:
+              <!-- Scoreboard -->
+              <ul class="text" id="scoreboard"></ul>
+            </div>
+          </div>
+        </div>
+
+            <div class="hover-trick">
+              <div class="hover-trigger status-right">
+                New Game
+              </div>
+              <!-- Controls -->
+              <div class="hover-content" id="controls"></div>
+            </div>
+        <!-- Game Table -->
+        <div class="game-frame" id="memory"></div>
+
+    </div>
+    <script src="memory.js"></script>
+  </body>
+</html>

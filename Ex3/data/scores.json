@@ -1,0 +1,576 @@
+{
+    "version": 1573116961606,
+    "scores": [
+        {
+            "id": 1572960956867,
+            "multiplayer": true,
+            "gm": 0,
+            "size": "2x3",
+            "player1": {
+                "name": "Doe John",
+                "time": 53,
+                "misses": 4,
+                "pairs": 5
+            },
+            "player2": {
+                "name": "Mich Mu John",
+                "time": 56,
+                "misses": 4,
+                "pairs": 5
+            },
+            "timestamp": 1571944834328
+        },
+        {
+            "id": 1571944834328,
+            "multiplayer": true,
+            "gm": 0,
+            "size": "4x4",
+            "player1": {
+                "name": "Doe John",
+                "time": 56,
+                "misses": 4,
+                "pairs": 5
+            },
+            "player2": {
+                "name": "Mich Mu John",
+                "time": 56,
+                "misses": 4,
+                "pairs": 5
+            },
+            "timestamp": 1571944900622
+        },
+        {
+            "id": 1572958784855,
+            "multiplayer": false,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "Kauri",
+                "time": 12525,
+                "misses": 1,
+                "pairs": 3
+            },
+            "timestamp": 1572958800505
+        },
+        {
+            "id": 1572958884435,
+            "multiplayer": false,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "Kauri",
+                "time": 6505,
+                "misses": 0,
+                "pairs": 3
+            },
+            "timestamp": 1572958895563
+        },
+        {
+            "id": 1572958956051,
+            "multiplayer": true,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "Kauri",
+                "time": 6962,
+                "misses": 2,
+                "pairs": 0
+            },
+            "timestamp": 1572958989867,
+            "player2": {
+                "name": "Kauri",
+                "time": 14196,
+                "misses": 1,
+                "pairs": 3
+            }
+        },
+        {
+            "id": 1572960871394,
+            "multiplayer": true,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "Kurikas",
+                "time": 10091,
+                "misses": 1,
+                "pairs": 1
+            },
+            "timestamp": 1572960905911,
+            "player2": {
+                "name": "Mallikas",
+                "time": 9372,
+                "misses": 0,
+                "pairs": 2
+            }
+        },
+        {
+            "id": 1572960924222,
+            "multiplayer": true,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "Kurikas",
+                "time": 12149,
+                "misses": 1,
+                "pairs": 3
+            },
+            "timestamp": 1572960956867,
+            "player2": {
+                "name": "Mallikas",
+                "time": 3380,
+                "misses": 1,
+                "pairs": 0
+            }
+        },
+        {
+            "id": 1573024798606,
+            "multiplayer": false,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "Kauri",
+                "time": 42457,
+                "misses": 4,
+                "pairs": 3
+            },
+            "timestamp": 1573028262184
+        },
+        {
+            "id": 1573028509507,
+            "multiplayer": true,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "Kurikas",
+                "time": 8010,
+                "misses": 1,
+                "pairs": 1
+            },
+            "timestamp": 1573028846101,
+            "player2": {
+                "name": "Kurikas",
+                "time": 7508,
+                "misses": 0,
+                "pairs": 2
+            }
+        },
+        {
+            "id": 1573029674871,
+            "multiplayer": false,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "Kullamees",
+                "time": 26993,
+                "misses": 4,
+                "pairs": 3
+            },
+            "timestamp": 1573029849684
+        },
+        {
+            "id": 1573030497783,
+            "multiplayer": false,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "Kurikas",
+                "time": 9446,
+                "misses": 1,
+                "pairs": 3
+            },
+            "timestamp": 1573030515410
+        },
+        {
+            "id": 1573031041711,
+            "multiplayer": false,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "Kurikas",
+                "time": 15481,
+                "misses": 1,
+                "pairs": 3
+            },
+            "timestamp": 1573031058323
+        },
+        {
+            "id": 1573034451227,
+            "multiplayer": false,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "Kauri",
+                "time": 9500,
+                "misses": 1,
+                "pairs": 3
+            },
+            "timestamp": 1573034463375
+        },
+        {
+            "id": 1573034553542,
+            "multiplayer": false,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "Mullikas",
+                "time": 10116,
+                "misses": 1,
+                "pairs": 3
+            },
+            "timestamp": 1573034565821
+        },
+        {
+            "id": 1573034679148,
+            "multiplayer": false,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "sda",
+                "time": 16527,
+                "misses": 3,
+                "pairs": 3
+            },
+            "timestamp": 1573034696825
+        },
+        {
+            "id": 1573034814768,
+            "multiplayer": false,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "asd",
+                "time": 12542,
+                "misses": 2,
+                "pairs": 3
+            },
+            "timestamp": 1573034828942
+        },
+        {
+            "id": 1573034977463,
+            "multiplayer": false,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "gasga",
+                "time": 9049,
+                "misses": 1,
+                "pairs": 3
+            },
+            "timestamp": 1573034988116
+        },
+        {
+            "id": 1573035002986,
+            "multiplayer": true,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "gasga",
+                "time": 9019,
+                "misses": 0,
+                "pairs": 3
+            },
+            "timestamp": 1573035024349,
+            "player2": {
+                "name": "gasga",
+                "time": 0,
+                "misses": 0,
+                "pairs": 0
+            }
+        },
+        {
+            "id": 1573035229937,
+            "multiplayer": false,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "Kulla",
+                "time": 5933,
+                "misses": 0,
+                "pairs": 3
+            },
+            "timestamp": 1573035255343
+        },
+        {
+            "id": 1573035786684,
+            "multiplayer": false,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "sagsg",
+                "time": 16508,
+                "misses": 3,
+                "pairs": 3
+            },
+            "timestamp": 1573035810842
+        },
+        {
+            "id": 1573035876786,
+            "multiplayer": false,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "asgfa",
+                "time": 9505,
+                "misses": 1,
+                "pairs": 3
+            },
+            "timestamp": 1573035887421
+        },
+        {
+            "id": 1573035914059,
+            "multiplayer": true,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "asgfa",
+                "time": 6994,
+                "misses": 0,
+                "pairs": 3
+            },
+            "timestamp": 1573035937539,
+            "player2": {
+                "name": "asgfa",
+                "time": 0,
+                "misses": 0,
+                "pairs": 0
+            }
+        },
+        {
+            "id": 1573040518193,
+            "multiplayer": false,
+            "gm": 0,
+            "size": "2x3",
+            "player1": {
+                "name": "kasd",
+                "time": 88591,
+                "misses": 1,
+                "pairs": 3
+            },
+            "timestamp": 1573040609394
+        },
+        {
+            "id": 1573041106664,
+            "multiplayer": false,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "kasd",
+                "time": 11488,
+                "misses": 1,
+                "pairs": 3
+            },
+            "timestamp": 1573041119301
+        },
+        {
+            "id": 1573044154545,
+            "multiplayer": false,
+            "gm": 0,
+            "size": "2x3",
+            "player1": {
+                "name": "dasd",
+                "time": 11836,
+                "misses": 1,
+                "pairs": 3
+            },
+            "timestamp": 1573044167496
+        },
+        {
+            "id": 1573044177711,
+            "multiplayer": false,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "dasd",
+                "time": 6120,
+                "misses": 0,
+                "pairs": 3
+            },
+            "timestamp": 1573044185082
+        },
+        {
+            "id": 1573044188593,
+            "multiplayer": true,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "dasd",
+                "time": 12528,
+                "misses": 3,
+                "pairs": 1
+            },
+            "timestamp": 1573044224071,
+            "player2": {
+                "name": "dasd",
+                "time": 9935,
+                "misses": 2,
+                "pairs": 2
+            }
+        },
+        {
+            "id": 1573044226911,
+            "multiplayer": true,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "sdas",
+                "time": 9987,
+                "misses": 3,
+                "pairs": 1
+            },
+            "timestamp": 1573044371909,
+            "player2": {
+                "name": "sdas",
+                "time": 12095,
+                "misses": 2,
+                "pairs": 2
+            }
+        },
+        {
+            "id": 1573044378348,
+            "multiplayer": true,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "sdas",
+                "time": 11641,
+                "misses": 2,
+                "pairs": 3
+            },
+            "timestamp": 1573044431485,
+            "player2": {
+                "name": "sdas",
+                "time": 4894,
+                "misses": 2,
+                "pairs": 0
+            }
+        },
+        {
+            "id": 1573044435346,
+            "multiplayer": true,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "sdas",
+                "time": 5731,
+                "misses": 2,
+                "pairs": 1
+            },
+            "timestamp": 1573044455824,
+            "player2": {
+                "name": "sdas",
+                "time": 7801,
+                "misses": 1,
+                "pairs": 2
+            }
+        },
+        {
+            "id": 1573044536639,
+            "multiplayer": false,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "sdas",
+                "time": 14044,
+                "misses": 2,
+                "pairs": 3
+            },
+            "timestamp": 1573044551834
+        },
+        {
+            "id": 1573044587790,
+            "multiplayer": false,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "sdas",
+                "time": 15825,
+                "misses": 4,
+                "pairs": 3
+            },
+            "timestamp": 1573044605272
+        },
+        {
+            "id": 1573044624385,
+            "multiplayer": true,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "sdas",
+                "time": 4858,
+                "misses": 2,
+                "pairs": 0
+            },
+            "timestamp": 1573044679677,
+            "player2": {
+                "name": "Mullikas",
+                "time": 13525,
+                "misses": 1,
+                "pairs": 3
+            }
+        },
+        {
+            "id": 1573116819469,
+            "multiplayer": false,
+            "gm": 0,
+            "size": "2x3",
+            "player1": {
+                "name": "nkd",
+                "time": 32493,
+                "misses": 10,
+                "pairs": 3
+            },
+            "timestamp": 1573116855731
+        },
+        {
+            "id": 1573116858900,
+            "multiplayer": true,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "nkd",
+                "time": 3521,
+                "misses": 1,
+                "pairs": 1
+            },
+            "timestamp": 1573116872437,
+            "player2": {
+                "name": "nkd",
+                "time": 4989,
+                "misses": 0,
+                "pairs": 2
+            }
+        },
+        {
+            "id": 1573116877366,
+            "multiplayer": true,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "nkd",
+                "time": 11386,
+                "misses": 3,
+                "pairs": 1
+            },
+            "timestamp": 1573116919218,
+            "player2": {
+                "name": "nkd",
+                "time": 13627,
+                "misses": 2,
+                "pairs": 2
+            }
+        },
+        {
+            "id": 1573116945426,
+            "multiplayer": false,
+            "gm": 1,
+            "size": "2x3",
+            "player1": {
+                "name": "nkd",
+                "time": 13022,
+                "misses": 2,
+                "pairs": 3
+            },
+            "timestamp": 1573116961606
+        }
+    ]
+}

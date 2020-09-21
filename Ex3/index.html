@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Memory Game!</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Lets have some fun!" />
+    <link rel="stylesheet" type="text/css" href="assets/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+    <link rel="icon" type="image/ico" href="favicon.ico" />
+  </head>
+
+  <body>
+    <div class="sheet-container">
+        <div class="sheet-head">
+          <h1>
+            Memory game for fun!
+          </h1>
+          <h3 style="margin-bottom: 2px;">
+            What?
+          </h3>
+          <div style="max-width: 1000px; margin: auto;">
+
+            <span id="tabScore" class="dropdown-check-list" tabindex="100">
+                <span class="anchor">Scoreboard</span>
+            </span>
+            <span id="tabSingleplayer" class="dropdown-check-list" tabindex="100">
+                <span class="anchor">Singleplayer</span>
+            </span>
+            <span id="tabMultiplayer" class="dropdown-check-list" tabindex="100">
+                <span class="anchor">Multiplayer</span>
+            </span>
+
+            <ul id="list-items" class="items"></ul>
+          </div>
+        </div>
+
+        <div class="progress-bar bar-left">
+          <div class="timer-container timer-left">
+            <!-- Timer -->
+            <span>Timer: </span><span id="game-timer">0</span>
+            <br>
+            <span>Score: <span id="game-score"></span></span>
+          </div>
+
+          <div class="status-trick">
+            <div class="status-trigger status-left">
+              Info >
+            </div>
+
+            <div class="status-content status-left">
+              Info!
+              <p style="max-width: 550px; text-align: center; font-size: 18px;">
+                Memory, also known as Match Match, Match Up, Concentration
+                Pelmanism, Shinkei-suijaku, Pexeso or simply Pairs, is a card game
+                in which all of the cards are laid face down on a surface and two
+                cards are flipped face up over each turn.
+              </p>
+              <p style="max-width: 550px; text-align: center; font-size: 18px;">
+                The object of the game is to turn over pairs of matching cards.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hover-trick">
+          <!-- Controls -->
+          <div class="hover-content" id="controls"></div>
+        </div>
+          
+        <!-- Game Table -->
+        <div class="game-frame" id="memory"></div>
+
+    </div>
+
+    <script src="assets/jQuery.js"></script>
+    <script src="assets/datatable.js"></script>
+    <script src="assets/memory.js"></script>
+
+  </body>
+</html>

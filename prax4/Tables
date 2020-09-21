@@ -1,0 +1,64 @@
+ssh -L 3306:localhost:3306 kariiv@dijkstra.cs.ttu.ee
+
+--user=st2014 --pass=progress
+
+TABLEs:
+
+CREATE TABLE `186048_user` (
+username varchar(255) PRIMARY KEY NOT NULL,
+email varchar(255) NOT NULL,
+password varchar(255) NOT NULL,
+bio varchar(255),
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+changed_at DATETIME ON UPDATE CURRENT_TIMESTAMP
+);
+
+ CREATE TABLE 186048_follow (
+id int NOT NULL AUTO_INCREMENT,
+user varchar(255),
+follow varchar(255),
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY (id),
+FOREIGN KEY (user) REFERENCES 186048_user(username)
+FOREIGN KEY (follow) REFERENCES 186048_user(username)
+);
+
+ CREATE TABLE 186048_tweet (
+id integer AUTO_INCREMENT,
+user varchar(255) NOT NULL,
+text varchar(255) NOT NULL,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+PRIMARY KEY (id),
+FOREIGN KEY (user) REFERENCES 186048_user(username)
+);
+
+ CREATE TABLE 186048_comment (  
+id int NOT NULL AUTO_INCREMENT,
+user varchar(255),
+tweet int,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY (id),
+FOREIGN KEY (user) REFERENCES 186048_user(username) ON DELETE CASCADE
+FOREIGN KEY (tweet) REFERENCES 186048_tweet(_id) ON DELETE CASCADE
+);
+
+ CREATE TABLE 186048_like (
+id int NOT NULL AUTO_INCREMENT,
+user varchar(255),
+tweet int,
+PRIMARY KEY (id),
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+FOREIGN KEY (user) REFERENCES 186048_user(username)
+FOREIGN KEY (tweet) REFERENCES 186048_tweet(_id)
+);
+
+ CREATE TABLE 186048_retweet (
+id int NOT NULL AUTO_INCREMENT,
+user varchar(255),
+tweet int,
+PRIMARY KEY (_id),
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+FOREIGN KEY (user) REFERENCES 186048_user(username)
+FOREIGN KEY (tweet) REFERENCES 186048_tweet(id)
+);
+

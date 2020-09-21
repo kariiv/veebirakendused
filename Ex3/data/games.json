@@ -1,0 +1,52 @@
+{
+    "games": [
+        {
+            "id": 1573122217045,
+            "players": [
+                {
+                    "user": {
+                        "id": "1573122206010",
+                        "name": "kauri",
+                        "lastActive": 1573122596686
+                    },
+                    "time": 0,
+                    "misses": 0,
+                    "pairs": 0,
+                    "turn": true
+                },
+                {
+                    "user": {
+                        "id": "1573122566045",
+                        "name": "Kauri",
+                        "lastActive": 1573122593896
+                    },
+                    "time": 0,
+                    "misses": 0,
+                    "pairs": 0,
+                    "turn": false
+                }
+            ],
+            "gm": 0,
+            "multiplayer": true,
+            "isStarted": false,
+            "isFinished": false,
+            "timestamp": 0,
+            "turnDelay": 0,
+            "table": {
+                "size": "2x3",
+                "cards": [
+                    "2H",
+                    "4H",
+                    "4S",
+                    "JD",
+                    "2C",
+                    "JH"
+                ],
+                "pairs": [],
+                "turned": []
+            },
+            "banned": [],
+            "spectators": []
+        }
+    ]
+}

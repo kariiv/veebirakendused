@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body {
+    background-color: #435165;
+}
+.login {
+    width: 400px;
+    background-color: #ffffff;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    margin: 100px auto;
+}
+.login h1 {
+    text-align: center;
+    color: #5b6574;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+.login form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+.login form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #3274d6;
+    color: #ffffff;
+}
+.login form input[type="password"], .login form input[type="text"] {
+    width: 310px;
+    height: 50px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+.login form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+   margin-top: 20px;
+    background-color: #3274d6;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+.login form input[type="submit"]:hover {
+  background-color: #2868c7;
+    transition: background-color 0.2s;
+}
+.main-back {
+    min-height: 98vh;
+    background: linear-gradient(193deg, rgba(2,0,36,1) 0%, rgba(39,39,191,1) 0%, rgba(0,212,255,1) 91%); 
+}
+
+.navbar {
+    overflow: hidden;
+    background: linear-gradient(193deg, rgba(2,0,36,1) 0%, rgba(25,25,226,1) 0%, rgba(0,8,47,1) 91%);
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    left: 0;
+    height: 80px;
+  }
+  
+  /* Links inside the navbar */
+  .navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 16px 20px;
+    text-decoration: none;
+  }
+  
+  /* Change background on mouse-over */
+  .nav-button:hover {
+    background: #ddd;
+    color: black;
+  }
+  
+  /* Main content */
+  .main {
+    margin-top: 30px; /* Add a top margin to avoid content overlay */
+  }
+  .logo {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      padding: 1px;
+      box-shadow:1px 2px 4px #FFF;
+      position: fixed;
+  }
+
+  .tweeter {
+    width: 550px;
+    background-color: #ffffff;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    margin: 80px auto;
+    box-shadow: 1px 1px 5px gray;
+    padding: 3px;
+  }
+  .tweeter h1 {
+    text-align: left;
+    color: #5b6574;
+    font-size: 24px;
+    padding: 20px 0 0 0;
+}
+.tweeter form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.tweeter form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #3274d6;
+    color: #ffffff;
+}
+.tweeter form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #3274d6;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+.tweeter form input[type="submit"]:hover {
+  background-color: #2868c7;
+    transition: background-color 0.2s;
+}
+
+.tweet-msg {
+    padding: 3px;
+    border: solid 1px gray;
+    border-radius: 10px;
+}

@@ -1,0 +1,70 @@
+{
+    "setup": {
+        "size": "3x2",
+        "gm": 1,
+        "multiplayer": true,
+        "host": "USER"
+    },
+
+    
+    "move": {
+        "id": "5tghu8j93g0j423gfr3",
+        "card": "JS"
+    },
+    "status": {
+        "id": "67g89h78g67"
+    },
+    "state": {
+        "players": [{}, {}],
+        "pairs": ["JS", "JC"],
+        "turned": ["", ""],
+        "spectators": [{}, {}]
+    },
+
+
+    
+    "table": {
+        "cards": ["JS", "KS", "2D"],
+        "paired": [],
+        "turned": []
+    },
+    "user": {
+        "id": "5rty7ui9iuj3ru42hg824",
+        "name": "Kurito",
+        "lastActive": 1531513
+    },
+    "player": {
+        "user": "USER",
+        "time": 56,
+        "miss": 4,
+        "pairs": 12,
+        "turn": false
+    },
+    "game": {
+        "id": "5f678g9g8679g867r342t4",
+        "players": ["PLAYER", "PLAYER"],
+        "timestamp": 1235246354531,
+
+        "size": "3x4",
+        "gm": 1,
+        "multiplayer": true,
+        "isStarded": false,
+        "isFinished": false,
+        "table": "TABLE",
+
+        "banned": ["567d98jas0ffg21ef"],
+        "spectators": [ "USER", "USER" ]
+    },
+
+    "scoreboard": {
+        "version": 8,
+        "scores": [{
+            "multiplayer": true,
+            "gamemode": 0,
+            "size": "RxC",
+            "player1": { "name": "Doe John", "time": 56, "misses":4, "pairs": 5},
+            "player2": { "name": "Mich Mu John", "time": 56, "misses":4, "pairs": 5},
+            "timestamp": 21563427536
+        }]
+    }
+}
