@@ -6,14 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Lets have some fun!" />
-    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
     <link rel="icon" type="image/ico" href="favicon.ico" />
-    <style>
-      @import url(http://fonts.googleapis.com/css?family=Indie+Flower:400,600);
-    </style>
-    <style>
-      @import url(http://fonts.googleapis.com/css?family=Lobster:400,600);
-    </style>
   </head>
 
   <body>
@@ -22,11 +16,11 @@
           <h1>
             Memory game for fun!
           </h1>
-          <h3 style="margin-bottom: 2px;">
+          <h3 class="mb-1">
             What?
           </h3>
-          <div style="max-width: 600px; margin: auto;">
-            <p style="margin-top: 0;">
+          <div class="sheet-body">
+            <p class="mt-0">
               Memory, also known as Match Match, Match Up, Concentration
               Pelmanism, Shinkei-suijaku, Pexeso or simply Pairs, is a card game
               in which all of the cards are laid face down on a surface and two
@@ -62,12 +56,29 @@
                 New Game
               </div>
               <!-- Controls -->
-              <div class="hover-content" id="controls"></div>
+              <div class="hover-content">
+                <div class="start-button" id="game-start">Start new Game</div>
+                Size:<select class="custom-select" id="game-size"></select>
+                <br>
+                Cards:<select class="custom-select" id="game-cards"></select>
+                <br>
+                GM:<select class="custom-select" id="game-mode"></select>
+                <br>
+                NoDelay: <input type="checkbox" id="game-delay">
+                <div class="reveal" id="reveal-cards" >Reveal cards</div>
+              </div>
             </div>
         <!-- Game Table -->
-        <div class="game-frame" id="memory"></div>
+        <div class="game-frame">
+          <div class="game-components">
+            <div class="table-wrapper">
+              <table class="game-table" id="game-table"></table>
+              <div class="show-results" id="game-result" style="display: none;"></div>
+            </div>
+          </div>
+        </div>
 
     </div>
-    <script src="memory.js"></script>
+    <script src="assets/js/index.js"></script>
   </body>
 </html>

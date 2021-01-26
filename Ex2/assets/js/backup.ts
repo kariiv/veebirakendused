@@ -1,48 +1,34 @@
 "use strict"
 
-
+const gameElement = document.getElementById("memory");
 const timerElement = document.getElementById("game-timer");
 const scoreboardElement = document.getElementById("scoreboard");
 const liveScoreElement = document.getElementById("game-score");
-
-const gameTableElement = document.getElementById("game-table");
-const gameResultElement = document.getElementById("game-result");
-
-const btnGameStartElement = document.getElementById("game-start");
-const selectGameModeElement = document.getElementById("game-mode");
-const selectGameCardsElement = document.getElementById("game-cards");
-const selectGameSizeElement = document.getElementById("game-size");
-const selectGameDelayElement = document.getElementById("game-delay");
-const btnRevealCardsElement = document.getElementById("reveal-cards");
+const controlsElement = document.getElementById("controls");
 
 
 class memoryController {
 
-    scoreInterval = null;
-
     constructor() {
-        this.games = []
-        this.currentGame = null
-    }
+        this.game = null
+        this.games = null
 
-    getCurrentGame() {
-        return this.currentGame
-    }
-
-    startScoreInterval(ms) {
-        this.scoreInterval = setInterval(() => {
-            liveScoreElement.innerText = this.getCurrentGame().getScore()
-        }, ms)
-    }
-
-    stopScoreInterval() {
-        clearInterval(this.scoreInterval)
     }
 
 
 
 
 }
+
+
+
+
+let game;
+let table;
+let scoreboard;
+let liveScore;
+let controls;
+let results;
 
 let score = [
     // current games
@@ -73,16 +59,17 @@ const validTypes = [
     "Fancy" // 1
 ];
 
-let selectSize;
-let selectType;
-let selectStrat;
+var selectSize;
+var selectType;
+var selectStrat;
 
-let state = [];
-let gameState = { finished: false, started: false };
-let pressed = "";
-let timeout = false;
+var state = [];
+var gameState = { finished: false, started: false };
+var timer;
+var pressed = "";
+var timeout = false;
 
-let timerInterval;
+var timerInterval;
 
 const playCardsValues = {
     suits: ["S", "D", "C", "H"],
@@ -94,34 +81,24 @@ const colorMap = { S: "C", C: "S", D: "H", H: "D" };
 const getColor = { S: "black", C: "black", D: "red", H: "red" };
 
 const apiUrl = "https://picsum.photos/100/150?random=";
-
-const localCards = "assets/img/cards/front/png/";
-const localBackCards = "assets/img/cards/back/card";
-
+const localCards = "cards/front/png/";
 const validSize = [
     "2x3", // 6
     "4x4", // 16
     "2x13", // 26
     "4x13", // 52
 ];
-
 const backs = 8;
 const randomness = 200;
-
-function createElement(el, className, parent, innerHTML, value) {
-    let element = document.createElement(el);
-    if (className) element.className = className
-    if (innerHTML !== null && innerHTML !== undefined) element.innerHTML = innerHTML
-    if (value !== null && value !== undefined) element.value = value;
-    if (parent !== null && parent !== undefined) parent.appendChild(element)
-    return element
-}
-
 
 // call this when the document is ready
 // this function protects itself against being called more than once
 function ready() {
-    buildControls();
+    game = gameElement
+    timer = timerElement
+    scoreboard = scoreboardElement
+    liveScore = liveScoreElement
+    controls = controlsElement
     setupLayout();
 }
 
@@ -133,16 +110,15 @@ function startNewGame() {
 
     state = [];
 
-    gameResultElement.style.display = "none";
+    results.style.display = "none";
 
     // initial game table
-    const size = selectGameSizeElement.options[selectGameSizeElement.selectedIndex].value;
+    var size = selectSize.options[selectSize.selectedIndex].value;
 
-    if (!validSize.includes(size))
-        setupLayout();
-    let spl = size.split("x");
-    const sizeX = parseInt(spl[0]);
-    const sizeY = parseInt(spl[1]);
+    if (!validSize.includes(size)) setupLayout();
+    var spl = size.split("x");
+    let sizeX = parseInt(spl[0]);
+    let sizeY = parseInt(spl[1]);
 
     currentGame = {
         size,
@@ -152,14 +128,14 @@ function startNewGame() {
         miss: 0,
         noDelay
     };
-    currentGame.strategy = selectGameModeElement.options[selectGameModeElement.selectedIndex].text;
+    currentGame.strategy = selectStrat.options[selectStrat.selectedIndex].text;
 
     if (!validStrategies.includes(currentGame.strategy)) {
         console.log("Error! Strat changed!");
         setupLayout();
     }
 
-    currentGame.type = selectGameCardsElement.options[selectGameCardsElement.selectedIndex].text;
+    currentGame.type = selectType.options[selectType.selectedIndex].text;
     if (!validTypes.includes(currentGame.type)) {
         console.log("Error! Type changed!");
         setupLayout();
@@ -199,7 +175,7 @@ function getCardValueInSameRank(card) {
 
 function setupTable(sizeX, sizeY) {
     let backIndex = Math.floor(Math.random() * backs) + 1;
-    let backUrl = localBackCards + backIndex + ".png";
+    let backUrl = "cards/back/card" + backIndex + ".png";
 
     // collect new card faces
     let cardDataList = [];
@@ -292,7 +268,7 @@ function setupTable(sizeX, sizeY) {
 
     for (let s = sizeX * sizeY; s > 0; s--) shuffle(cardList);
 
-    gameTableElement.innerHTML = "";
+    table.innerHTML = "";
 
     for (let x = 0; x < sizeX; x++) {
         let row = document.createElement("tr");
@@ -303,7 +279,7 @@ function setupTable(sizeX, sizeY) {
             card.appendChild(cardList.pop());
             row.appendChild(card);
         }
-        gameTableElement.appendChild(row);
+        table.appendChild(row);
     }
 }
 
@@ -321,12 +297,12 @@ function calculateScore() {
         100 +
         getOpenCardsCount() * 20 * currentGame.cards -
         currentGame.miss * (20 + currentGame.time);
-    liveScoreElement.innerText = currentGame.score;
+    liveScore.innerText = currentGame.score;
 }
 
 function ticking() {
     currentGame.time++;
-    timerElement.innerText = currentGame.time;
+    timer.innerText = currentGame.time;
     calculateScore();
 }
 
@@ -388,29 +364,44 @@ function checkGameEnd() {
 }
 
 function createCard(card) {
-    const flipCard = createElement('div', "flip-card box");
-    const inner = createElement("div", "flip-card-inner", flipCard);
+    let flipCard = document.createElement("div");
+    flipCard.setAttribute("class", "flip-card box");
 
-    const front = createElement("div", "flip-card-front", inner);
-    const back = createElement("div", "flip-card-back", inner);
+    let inner = document.createElement("div");
+    inner.setAttribute("class", "flip-card-inner");
 
-    const frontCanvas = createElement("canvas", null, front);
-    frontCanvas.height = 150;
-    frontCanvas.width = 100;
+    let front = document.createElement("div");
+    front.setAttribute("class", "flip-card-front");
 
-    const backImg = new Image();
-    backImg.onload = () =>
-        frontCanvas.getContext("2d").drawImage(backImg,0,0,backImg.width,backImg.height,0,0,100,150);
-    backImg.src = card.backUrl;
+    var lal = document.createElement("canvas");
+    lal.height = 150;
+    lal.width = 100;
 
-    const canvas = createElement("canvas", null, back);
-    const ctx = canvas.getContext("2d");
+    var backimg = new Image();
+    backimg.onload = () => {
+        lal.getContext("2d").drawImage(backimg,0,0,backimg.width,backimg.height,0,0,100,150);
+    };
+    backimg.src = card.backUrl;
+
+    front.appendChild(lal);
+
+    var canvas = document.createElement("canvas");
+    let ctx = canvas.getContext("2d");
 
     canvas.height = 150;
     canvas.width = 100;
 
-    let img = new Image();
+    var img = new Image();
     img.src = card.frontUrl;
+
+    let back = document.createElement("div");
+    back.setAttribute("class", "flip-card-back");
+    back.appendChild(canvas);
+
+    inner.appendChild(front);
+    inner.appendChild(back);
+
+    flipCard.appendChild(inner);
 
     let objState = {
         flipTimeout: null,
@@ -460,7 +451,7 @@ function createCard(card) {
 }
 
 function revealAllNonVisibleCards() {
-    const un = state.find(s => !s.clicked);
+    var un = state.find(s => !s.clicked);
     if (un) {
         un.turn(true);
         setTimeout(revealAllNonVisibleCards, 100);
@@ -479,34 +470,68 @@ function endGame(finished) {
     } else revealAllNonVisibleCards();
 }
 
-function displayResults(game, title = "Game Results") {
+function displayResults(game, customTitle) {
+    let title = customTitle ? customTitle : "Game Results";
 
-    gameResultElement.style.display = "block";
-    gameResultElement.innerHTML = "";
+    results.style.display = "block";
+    results.innerHTML = "";
 
-    createElement('strong', null, gameResultElement, title)
+    let s = document.createElement("strong");
+    s.innerText = title + ":";
+    results.appendChild(s);
 
     // size,type  score, time, miss,
-    createElement('div', null, gameResultElement, game.size + " " + game.type)
-    createElement('div', "result-item", gameResultElement, "Gamemode: " + game.strategy)
-    createElement('div', "result-item", gameResultElement, "NoDelay: " + (game.noDelay ? "Yes" : "No"))
+    let div1 = document.createElement("div");
+    div1.appendChild(document.createTextNode(game.size + " " + game.type));
+    results.appendChild(div1);
 
-    gameResultElement.appendChild(document.createElement("br"));
+    div1 = document.createElement("div");
+    div1.className = "result-item";
+    div1.appendChild(document.createTextNode("Gamemode: " + game.strategy));
+    results.appendChild(div1);
 
-    createElement('div', "result-item", gameResultElement, "Score: " + game.score)
-    createElement('div', "result-item", gameResultElement, "Time: " + game.time + "sec")
-    createElement('div', "result-item", gameResultElement, "Misses: " + game.miss + "x")
+    div1 = document.createElement("div");
+    div1.className = "result-item";
+    div1.appendChild(
+        document.createTextNode("NoDelay: " + (game.noDelay ? "Yes" : "No"))
+    );
+    results.appendChild(div1);
+
+    results.appendChild(document.createElement("br"));
+
+    div1 = document.createElement("div");
+    div1.appendChild(document.createTextNode("Score: " + game.score));
+    div1.className = "result-item";
+    results.appendChild(div1);
+
+    div1 = document.createElement("div");
+    div1.appendChild(document.createTextNode("Time: " + game.time + "sec"));
+    div1.className = "result-item";
+    results.appendChild(div1);
+
+    div1 = document.createElement("div");
+    div1.appendChild(document.createTextNode("Misses: " + game.miss + "x"));
+    div1.className = "result-item";
+    results.appendChild(div1);
 }
 
 function refreshScoreboard() {
-    scoreboardElement.innerHTML = score.length === 0 ? "There is no finished gameplay!\n<br>Start new now!" : "";
+    scoreboard.innerHTML =
+        score.length === 0
+            ? "There is no finished gameplays!\n<br>Start new now!"
+            : "";
 
     for (let n = score.length - 1; n >= 0; n--) {
         let si = score[n];
+        let j = document.createElement("li");
+        j.className = "scoreboard-item";
 
-        let j = createElement("li", 'scoreboard-item', scoreboardElement)
         j.onmouseenter = () => displayResults(si, "Game History");
-        j.onmouseleave = () => gameState.finished ? displayResults(currentGame) : (gameResultElement.style.display = "none");
+        j.onmouseleave = () => {
+            gameState.finished
+                ? displayResults(currentGame)
+                : (results.style.display = "none");
+        };
 
         j.innerHTML =
             "<div><strong>" +
@@ -518,39 +543,95 @@ function refreshScoreboard() {
             "s | " +
             si.miss +
             "miss<div>";
+        scoreboard.appendChild(j);
     }
 }
 
-
-
-function createSelectElementOptions(selectEl, options) {
-    selectEl.innerText = ""
-    for (let opt of options)
-        createElement('option', null, selectEl, opt.text, opt.value)
-}
-
 function buildControls() {
-    btnGameStartElement.onclick = startNewGame;
-    btnRevealCardsElement.onclick = () => endGame(false);
-    selectGameDelayElement.onclick = () => noDelay = selectGameDelayElement.checked;
+    var newGame = document.createElement("div");
+    newGame.setAttribute("class", "start-button");
+    newGame.innerHTML = "Start new Game";
+    newGame.onclick = startNewGame;
 
-    createSelectElementOptions(selectGameSizeElement, validSize.map(value => {
-        const split = value.split("x")
-        const text = (parseInt(split[0]) * parseInt(split[1])).toString()
-        return { value, text }
-    }))
+    // Continue later
+    let reveal = document.createElement("div");
+    reveal.setAttribute("class", "reveal");
+    reveal.innerHTML = "Reveal cards";
+    reveal.onclick = () => endGame(false);
 
-    createSelectElementOptions(selectGameCardsElement, validTypes.map(value => {
-        return { text:value }
-    }))
+    let del = document.createElement("input");
+    del.setAttribute("type", "checkbox");
+    del.onclick = () => {
+        noDelay = del.checked;
+    };
 
-    createSelectElementOptions(selectGameModeElement, validStrategies.map(value => {
-        return { text: value }
-    }))
+    selectSize = document.createElement("select");
+    selectSize.setAttribute("class", "custom-select");
+    for (let opt of validSize) {
+        let op = document.createElement("option");
+        op.value = opt;
+        op.innerText = parseInt(opt.split("x")[0]) * parseInt(opt.split("x")[1]);;
+        selectSize.appendChild(op);
+    }
+
+    selectType = document.createElement("select");
+    selectType.setAttribute("class", "custom-select");
+    for (let opt of validTypes) {
+        let op = document.createElement("option");
+        op.innerText = opt;
+        selectType.appendChild(op);
+    }
+
+    selectStrat = document.createElement("select");
+    selectStrat.setAttribute("class", "custom-select");
+    for (let strat of validStrategies) {
+        let op = document.createElement("option");
+        op.innerText = strat;
+        selectStrat.appendChild(op);
+    }
+    controls.innerHTML = "";
+    controls.appendChild(newGame);
+    controls.appendChild(document.createTextNode("Size:"));
+    controls.appendChild(selectSize);
+    controls.appendChild(document.createElement("br"));
+    controls.appendChild(document.createTextNode("Cards:"));
+    controls.appendChild(selectType);
+    controls.appendChild(document.createElement("br"));
+    controls.appendChild(document.createTextNode("GM:"));
+    controls.appendChild(selectStrat);
+    controls.appendChild(document.createElement("br"));
+    controls.appendChild(document.createTextNode("NoDelay:"));
+    controls.appendChild(del);
+    controls.appendChild(reveal);
 }
 
 function setupLayout() {
-    gameTableElement.innerHTML = "";
+    game.innerHTML = "";
+    let g = document.createElement("div");
+    g.setAttribute("class", "game-components");
+
+    // Controls
+    buildControls();
+
+    // Table
+    let tableWrapper = document.createElement("div");
+    tableWrapper.setAttribute("class", "table-wrapper");
+
+    table = document.createElement("table");
+    table.setAttribute("class", "game-table");
+    tableWrapper.appendChild(table);
+
+    results = document.createElement("div");
+    results.setAttribute("class", "show-results");
+    results.style.display = "none";
+
+    results.appendChild(document.createTextNode("Testing"));
+
+    tableWrapper.appendChild(results);
+
+    g.appendChild(tableWrapper);
+
+    game.appendChild(g);
 
     refreshScoreboard();
     // startNewGame();
