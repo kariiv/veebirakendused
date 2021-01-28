@@ -74,25 +74,24 @@
   user-select: none;
 }
 
-.start-button {
-  font-size: 26px;
-  margin-right: -8px;
-}
-
-.start-button:hover {
+.text-hover:hover {
   cursor: pointer;
   text-decoration: underline;
   color: blue;
 }
 
-.reveal {
+#game-start {
+  font-size: 26px;
+  margin-right: -8px;
+}
+
+#reveal-cards {
   font-size: 18px;
   padding-right: 20px;
 }
 
-.reveal:hover {
-  cursor: pointer;
-  color: blue;
+#reveal-cards:hover {
+  text-decoration: none;
 }
 
 td {
@@ -467,4 +466,8 @@ h6 {
 .sheet-body {
   max-width: 600px;
   margin: auto;
+}
+
+#game-result {
+  display: none;
 }

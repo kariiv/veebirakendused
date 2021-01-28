@@ -57,7 +57,7 @@
               </div>
               <!-- Controls -->
               <div class="hover-content">
-                <div class="start-button" id="game-start">Start new Game</div>
+                <div class="text-hover" id="game-start">Start new Game</div>
                 Size:<select class="custom-select" id="game-size"></select>
                 <br>
                 Cards:<select class="custom-select" id="game-cards"></select>
@@ -65,7 +65,7 @@
                 GM:<select class="custom-select" id="game-mode"></select>
                 <br>
                 NoDelay: <input type="checkbox" id="game-delay">
-                <div class="reveal" id="reveal-cards" >Reveal cards</div>
+                <div class="text-hover" id="reveal-cards" >Reveal cards</div>
               </div>
             </div>
         <!-- Game Table -->
@@ -73,12 +73,13 @@
           <div class="game-components">
             <div class="table-wrapper">
               <table class="game-table" id="game-table"></table>
-              <div class="show-results" id="game-result" style="display: none;"></div>
+              <div class="show-results" id="game-result"></div>
             </div>
           </div>
         </div>
 
     </div>
-    <script src="assets/js/index.js"></script>
+    <script> var exports = {}; </script>
+    <script type="module" src="assets/js/index.js"></script>
   </body>
 </html>
